@@ -11,16 +11,19 @@ export function renderListItem(animal) {
 
     const nameSpan = document.createElement('div');
     nameSpan.textContent = animal.name;
-    nameSpan.classList.add('name');
+   // nameSpan.classList.add('name');
 
     const originSpan = document.createElement('div');
-    originSpan.classList.add('origin');
+    originSpan.textContent = animal.origin;
+   // originSpan.classList.add('origin');
 
     const domesticatedSpan = document.createElement('div');
-    domesticatedSpan.classList.add('domesticated');
+    domesticatedSpan.textContent = animal.domesticated;
+   // domesticatedSpan.classList.add('domesticated');
 
     const kingdomSpan = document.createElement('div');
-    kingdomSpan.classList.add('kingdom');
+    kingdomSpan.textContent = animal.kingdom;
+  //  kingdomSpan.classList.add('kingdom');
     
 
     
