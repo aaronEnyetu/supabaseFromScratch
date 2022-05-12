@@ -1,9 +1,9 @@
-#animals {
+.animal-detail {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.animal {
+#animal-detail img {
     width: 30%;    
     display: flex;
     flex-direction: column;
@@ -13,9 +13,4 @@
     border-radius: 10px;
     margin: 10px;
     background-color: bisque;
-}
-.image{
-    width: 50%;
-    border-radius: 50%;
-    border: 5px solid rgb(80, 45, 5);
 }
