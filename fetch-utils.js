@@ -5,13 +5,13 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getAnimals() {
-    const resp = await client.from('domesticated_animals').select('*');
+    const resp = await client.from('domesticated-animals').select('*');
     console.log(resp);
     return resp.data;
 }
 
 export async function getAnimalById(idFromParams) {
-    const resp = await client.from('domesticated_animals').select('*').match({ id: idFromParams }).single();
+    const resp = await client.from('domesticated-animals').select('*').match({ id: idFromParams }).single();
     console.log(resp);
     return resp.data;
 }

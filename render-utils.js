@@ -4,10 +4,10 @@ export function renderListItem(animal) {
     
 
     const a = document.createElement('a');
-    a.href = `./animal-detail/?id=${animal.id}`;
+    a.href = `./animals/?id=${animal.id}`;
 
     const img = document.createElement('img');
-    img.src = `./assets/${animal.type}.jpg`;
+    img.src = animal.image;
 
     const nameSpan = document.createElement('div');
     nameSpan.textContent = animal.name;
