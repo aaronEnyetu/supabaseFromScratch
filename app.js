@@ -1,8 +1,21 @@
-// import functions and grab DOM elements
+// instead of importing the data
+// we want to load it from supabase
+// import { animals } from './data.js';
+import { getAnimals } from './fetch-utils.js';
+import { renderListItem } from './render-utils.js';
 
-// let state
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+const animalListEl = document.getElementById('animal-list');
+// OPTION 1 -- wrap everything in loading function
+async function loadData() {
+    const animals = await getAnimals();
+    console.log(animals);
+   // const main = document.querySelector('main');
+
+    for (let animal of animals) {
+        const animalDiv = renderListItem(animal);
+        animalListEl.append(animalDiv);
+    }
+}
+
+loadData();
