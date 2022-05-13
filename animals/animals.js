@@ -4,11 +4,21 @@ const animalNameElem = document.getElementById('animal-name');
 const animalOriginElem = document.getElementById('animal-origin');
 const animalDomesticatedElem = document.getElementById('animal-domesticated');
 const animalKingdomElem = document.getElementById('animal-kingdom');
+const animalImageElem = document.getElementById('animal-image');
 
 // use the id to load the data of the individual animal
 // previously, we looped through our data until we found a matching obejct
 //   (using our findById)
 // NOW we're gonna just use Supabase
+
+async function loadImage() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const animal = await getAnimalById(id);
+    animalImageElem.textContent = animal.image;
+}
+
+loadImage();
 
 async function loadData() {
     const params = new URLSearchParams(window.location.search);
